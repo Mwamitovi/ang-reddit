@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,27 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+<!-- form -->
+<form class="ui large form segment">
+    <h3 class="ui header">Add a Link</h3>
+    <div class="field">
+        <label for="title">Title:</label>
+        <input name="title" #newtitle>
+    </div>
+    <div class="field">
+        <label for="link">Link:</label>
+        <input name="link" #newlink>
+    </div>
+    <!-- Added a button -->
+    <button (click)="addArticle(newtitle, newlink)" 
+      class="ui positive right floated button">
+        Submit link
+    </button>
+</form>
+<!-- /end of form -->
+<!-- include Articles -->
+<div class="ui grid posts">
+    <app-article></app-article>
+</div>
