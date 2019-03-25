@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 // import the class "Article"
 import { Article } from './article.model';
 
@@ -14,17 +14,19 @@ export class ArticleComponent implements OnInit {
   // votes: number;
   // title: string;
   // link: string;
-  article: Article;
+  // article: Article;
+  @Input() article: Article;
 
   constructor() {
     // this.title = 'MwamiTovi';
     // this.link = 'http://mwamitovi-newsletter.co.ug';
     // this.votes = 10;
-    this.article = new Article(
-        'MwamiTovi',
-        'http://mwamitovi-newsletter.co.ug',
-        10
-      );
+    // article is populated by the Input now, so we don't need anything here...
+    // this.article = new Article(
+    //     'MwamiTovi',
+    //     'http://mwamitovi-newsletter.co.ug',
+    //     10
+    //   );
   }
 
   voteUp(): boolean {
